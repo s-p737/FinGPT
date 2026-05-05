@@ -1,4 +1,4 @@
-import { useState, useCallback, useRef } from 'react'
+import { useState, useCallback } from 'react'
 import { sendChatMessage } from '../lib/api'
 import { generateId, parseSourceTags } from '../lib/utils'
 
@@ -87,7 +87,7 @@ export function useChat(sourceFilter) {
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState(null)
   const [useMock, setUseMock] = useState(true) // flip to false once backend is live
-  const abortRef = useRef(null)
+  // 
 
   const sendMessage = useCallback(async (text) => {
     if (!text.trim() || isLoading) return

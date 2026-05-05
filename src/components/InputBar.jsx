@@ -127,10 +127,7 @@ export default function InputBar({ onSend, isLoading, activeSource }) {
     textareaRef.current?.focus()
   }
 
-  const sourceLabel = activeSource !== 'all'
-    ? SUGGESTED_QUERIES.find(() => true) && activeSource
-    : null
-
+  
   return (
     <div style={s.container}>
       <div style={s.suggestionsWrap}>
