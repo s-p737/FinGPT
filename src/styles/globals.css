@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+  --font-sans: 'IBM Plex Sans', system-ui, sans-serif;
+
+  --bg-base:      #0a0d12;
+  --bg-surface:   #111620;
+  --bg-elevated:  #181e2a;
+  --bg-hover:     #1f2840;
+  --bg-active:    #253050;
+
+  --border-subtle:  rgba(255,255,255,0.07);
+  --border-default: rgba(255,255,255,0.12);
+  --border-strong:  rgba(255,255,255,0.22);
+  --border-accent:  #1a4f8a;
+
+  --text-primary:   #e8edf5;
+  --text-secondary: #8b95a8;
+  --text-tertiary:  #4d5668;
+  --text-accent:    #5b9bd5;
+  --text-dim:       #363e50;
+
+  --accent-blue:    #1a6fc4;
+  --accent-blue-lt: #2a85e8;
+  --accent-green:   #1a7a4a;
+  --accent-green-lt:#22a862;
+  --accent-amber:   #b87d1a;
+  --accent-amber-lt:#e8a020;
+  --accent-coral:   #a03228;
+  --accent-coral-lt:#d44030;
+  --accent-purple:  #5a3d9e;
+  --accent-purple-lt:#7a5acc;
+
+  --tag-csv:    { bg: #0e2418; border: #1a5c32; text: #4ade80; }
+  --tag-py:     { bg: #0e1c30; border: #1a4870; text: #60a5fa; }
+  --tag-log:    { bg: #241a08; border: #6b4608; text: #fbbf24; }
+  --tag-html:   { bg: #1a0e2e; border: #4a2080; text: #c084fc; }
+  --tag-sh:     { bg: #1a1010; border: #6b2020; text: #f87171; }
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.4);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.5);
+}
+
+html, body, #root {
+  height: 100%;
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border-default); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: var(--border-strong); }
+
+/* Focus ring */
+:focus-visible {
+  outline: 2px solid var(--accent-blue-lt);
+  outline-offset: 2px;
+}
+
+code, kbd {
+  font-family: var(--font-mono);
+  font-size: 0.88em;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 1px 5px;
+}
+
+a {
+  color: var(--text-accent);
+  text-decoration: none;
+}
+a:hover { text-decoration: underline; }
+
+button {
+  cursor: pointer;
+  font-family: var(--font-sans);
+}
+
+textarea, input {
+  font-family: var(--font-sans);
+}
+
+/* Animations */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+
+@keyframes blink {
+  0%, 80%, 100% { opacity: 0.25; }
+  40%            { opacity: 1; }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.25s ease forwards;
+}
