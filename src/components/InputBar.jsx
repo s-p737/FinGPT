@@ -122,7 +122,7 @@ export default function InputBar({ onSend, isLoading, activeSource }) {
     if (textareaRef.current) textareaRef.current.style.height = 'auto'
   }
 
-  function useChip(text) {
+  function applyChip(text) {
     setValue(text)
     textareaRef.current?.focus()
   }
@@ -140,7 +140,7 @@ export default function InputBar({ onSend, isLoading, activeSource }) {
             style={s.chip(hoveredChip === i)}
             onMouseEnter={() => setHoveredChip(i)}
             onMouseLeave={() => setHoveredChip(null)}
-            onClick={() => useChip(q)}
+            onClick={() => applyChip(q)}
           >
             {q.length > 40 ? q.slice(0, 38) + '…' : q}
           </button>
